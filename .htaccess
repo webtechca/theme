@@ -1,0 +1,16 @@
+RewriteEngine on
+# RewriteRule ^games/?$ /index.html?category=games [QSA,NC,L]
+
+RewriteRule ^games/?$ /category.html?category=games [QSA,NC,L]
+RewriteRule ^apps/?$ /category.html?category=apps [QSA,NC,L]
+RewriteRule ^arts/?$ /category.html?category=arts [QSA,NC,L]
+
+RewriteRule ^games/(.*)/?$ /single.html?category=games&title=$1 [QSA,NC,L]
+RewriteRule ^apps/(.*)/?$ /single.html?category=apps&title=$1 [QSA,NC,L]
+RewriteRule ^arts/(.*)/?$ /single.html?category=arts&title=$1 [QSA,NC,L]
+
+RewriteRule ^policy/?$ /policy.html [QSA,NC,L]
+
+
+# RewriteCond %{REQUEST_FILENAME} !-f
+# RewriteRule ^(.*)$ index.php?p=$1 [QSA,L]
