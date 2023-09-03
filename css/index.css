@@ -98,6 +98,9 @@ ul.social-buttons {
   max-height: 250px;
   height: 100%;
 } */
+#portfolio .portfolio-item .portfolio-caption {
+  min-height: 170px;
+}
 
 @media only screen and (max-width: 500px) {
   /* Home */

@@ -38,7 +38,7 @@ const moduleHelper = (function () {
     //   result.slug = params[2];
     // }
     const params = new URLSearchParams(paramsString.slice(paramsString.indexOf('?') + 1));
-    result.category = params.get('category');
+    result.category = params.get('category').includes("#") ? params.get('category').split("#")[0] : params.get('category');
     result.slug = params.get('title');
     return result;
   }
