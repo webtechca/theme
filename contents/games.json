@@ -6,7 +6,7 @@
     "description": "Lorem ipsum dolor sit amet consecteur.",
     "slug": "test",
     "thumbnail": "/img/portfolio/01-thumbnail.jpg",
-    "status": "private",
+    "status": "published",
     "createdAt": "2019-10-28"
   },
   {

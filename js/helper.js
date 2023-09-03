@@ -1,17 +1,17 @@
-var moduleHelper = (function () {
+const moduleHelper = (function () {
   function parseQueryString(query) {
-    var vars = query.split("&");
-    var query_string = {};
-    for (var i = 0; i < vars.length; i++) {
-      var pair = vars[i].split("=");
-      var key = decodeURIComponent(pair[0]);
-      var value = decodeURIComponent(pair[1]);
+    const vars = query.split("&");
+    const query_string = {};
+    for (const element of vars) {
+      const pair = element.split("=");
+      const key = decodeURIComponent(pair[0]);
+      const value = decodeURIComponent(pair[1]);
       // If first entry with this name
       if (typeof query_string[key] === "undefined") {
         query_string[key] = decodeURIComponent(value);
         // If second entry with this name
       } else if (typeof query_string[key] === "string") {
-        var arr = [query_string[key], decodeURIComponent(value)];
+        let arr = [query_string[key], decodeURIComponent(value)];
         query_string[key] = arr;
         // If third or later entry with this name
       } else {
@@ -23,20 +23,23 @@ var moduleHelper = (function () {
 
   function getQueryParams() {
     let url = window.location;
-    let paramsString = url.pathname;
-    let params = paramsString.split('/');
-    // console.log(params);
+    // let paramsString = url.pathname;
+    let paramsString = url.href;
+    // let params = paramsString.split('/');
     let result = {
       category: '',
       slug: '',
     };
-    let paramsLenght = params.length;
-    if (paramsLenght > 1) {
-      result.category = params[1];
-    }
-    if (paramsLenght > 2) {
-      result.slug = params[2];
-    }
+    // let paramsLenght = params.length;
+    // if (paramsLenght > 1) {
+    //   result.category = params[1];
+    // }
+    // if (paramsLenght > 2) {
+    //   result.slug = params[2];
+    // }
+    const params = new URLSearchParams(paramsString.slice(paramsString.indexOf('?') + 1));
+    result.category = params.get('category');
+    result.slug = params.get('title');
     return result;
   }
 

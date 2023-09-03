@@ -1,4 +1,4 @@
-var moduleCategory = (function () {
+const moduleCategory = (function () {
   var categoryContents = [];
   function handleReady() {
     let params = moduleHelper.getQueryParams();
@@ -18,7 +18,7 @@ var moduleCategory = (function () {
     if (termLength === 0) {
       printCategory(categoryContents);
       return true;
-    } else if (termLength <= 2) {
+    } else if (termLength < 2) {
       return false;
     }
     term = term.toLowerCase();
@@ -54,10 +54,12 @@ var moduleCategory = (function () {
       let title = post.title;
       let category = post.category;
       let description = post.description;
+      // let href = `/${category}/${slug}`;
+      let href = `/single.html?category=${category}&title=${slug}`;
       output +=
         `
         <div class="col-md-4 col-sm-6 portfolio-item">
-          <a class="portfolio-link" href="/${category}/${slug}">
+          <a class="portfolio-link" href="${href}">
             <div class="portfolio-hover">
               <div class="portfolio-hover-content">
                 <i class="fas fa-plus fa-3x"></i>

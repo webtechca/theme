@@ -1,4 +1,4 @@
-var moduleIndex = (function () {
+const moduleIndex = (function () {
   function handleReady() {
     $(".js-contact-form input, .js-contact-form textarea").jqBootstrapValidation({
       preventSubmit: true,
