@@ -51,7 +51,7 @@ const moduleSingle = (function () {
           blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia
           expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
         <ul class="list-inline">
-          <li><a href="/category.html?category=games">Games</a></li>
+          <li><a href="/category.html?category=websites">Websites</a></li>
           <li><a href="/category.html?category=arts">Arts</a></li>
           <li><a href="/category.html?category=apps">Apps</a></li>
         </ul>

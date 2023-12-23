@@ -19,6 +19,7 @@
 
 .services-card {
   box-shadow: -4px 4px 10px 0px rgba(0,0,0,0.05);
+  margin-bottom: 15px;
 }
 
 #clients {
@@ -111,6 +112,18 @@ ul.social-buttons {
 
   .services-card {
     box-shadow: none;
+  }
+}
+
+.services-row {
+  justify-content: space-between;
+}
+
+@media (min-width: 768px) {
+  .services-row .col-md-4 {
+      -ms-flex: 0 0 31%;
+      flex: 0 0 31%;
+      max-width: 31%;
   }
 }
 
